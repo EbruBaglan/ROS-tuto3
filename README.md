@@ -27,6 +27,60 @@ Udacity's AI for Robotics(opens in a new tab) Free Course
 Kalman Filter: filtering noisy sensor data. learn the limitation to overcome, and variations.
 Sensor Fusion: in lab. multiple sensor to 
 Monte Carlo Localization: uses particle filters to track your robot pose and present many advantages over EKF. How particles can tell a robot's pose. using Adaptive Monte Carlo Localization Package...
-  
+
+## 4.2.1.
+how it came about
+Kalman Filter... localization challenges...why filter need. start with 1D example, move to multi dim example... both in C++... extended kalman filter with additional applications
+
+4.2.2.
+Kalman filter is an estimation algorithm...pos/vel of a robot or temp. of process...note worthy... uncertainty or noise and give estimate so fast... state prediction and measurement update cycle...
+What does it take as an input, what does it filter out, and what important substance does it let through? The graphic below compares a household coffee filter, an engineering low-pass filter, and a Kalman filter. graph.
+
+4.2.3
+trajectory estimation in apollo 
+introduced it to NASA...trajectory estimation of Apollo program...(Stanley Schmidt)
+accurate enough and small enough to run on onboard comp
+
+measurements coming in irregular time intervals
+
+4.2.4.
+estimate state when measurements are noisy. engineering and economics... feature tracking...
+
+4.2.5.
+KF- linear
+EKF - nonlinear
+UKF - highly nonlinear (unscented KF)...where EKF may not converge
+
+4.2.6.
+go for 10m
+bell curve...gaussian...specific to robot and environment...
+
+4.2.7.
+help us better sense...a few sensor measurements... initial guess...expected uncertainty of a sensor/movement... GPS data...accurate to few meters...additional sensors onboard... sensor fusion... uses Kalman filter...
+
+4.2.8.
+At the basis of the Kalman Filter is the Gaussian distribution, sometimes referred to as a bell curve or normal distribution. Recall the rover example - after executing one motion, the rover’s location was represented by a Gaussian. It’s exact location was not certain, but the level of uncertainty was bounded. It was unlikely that the rover would be more than a few meters away from its target location, and it would be nearly impossible for it to show up at the 50 meter mark.
+
+Mean and Variance
+
+A Gaussian is characterized by two parameters - its mean (μ) and its variance (σ²). The mean is the most probable occurrence and lies at the centre of the function, and the variance relates to the width of the curve. The term unimodal implies a single peak present in the distribution.
+
+Gaussian distributions are frequently abbreviated as N(x: μ, σ²), and will be referred to in this way throughout the coming lessons.
+
+That’s right, the Kalman Filter treats all noise as unimodal Gaussian. In reality, that’s not the case. However, the algorithm is optimal if the noise is Gaussian. The term optimal expresses that the algorithm minimizes the mean square error of the estimated parameters.
+
+4.2.9.
+internal belief... best guess...
+state(x), measurement(z), control action(u)... yaw... 3 state variables...
+Kalman filter cycle: initial estimate of state, state prediction, measurement update...
+
+4.2.10.
+Quizzes
+
+4.2.11.
+Position + Motion
+
+4.2.12
+
 
 -->
